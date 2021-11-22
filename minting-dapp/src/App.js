@@ -4,6 +4,7 @@ import { connect } from "./redux/blockchain/blockchainActions";
 import { fetchData } from "./redux/data/dataActions";
 import * as s from "./styles/globalStyles";
 import styled from "styled-components";
+import Roadmap from "./Roadmap";
 
 const truncate = (input, len) =>
   input.length > len ? `${input.substring(0, len)}...` : input;
@@ -236,9 +237,9 @@ function App() {
                 color: "var(--primary-text)",
               }}
             >
-              <StyledLink target={"_blank"} href={CONFIG.SCAN_LINK}>
+              {/* <StyledLink target={"_blank"} href={CONFIG.SCAN_LINK}>
                 {truncate(CONFIG.CONTRACT_ADDRESS, 15)}
-              </StyledLink>
+              </StyledLink> */}
             </s.TextDescription>
             <s.SpacerSmall />
             {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
@@ -282,10 +283,11 @@ function App() {
                         color: "var(--accent-text)",
                       }}
                     >
-                      Connect to the {CONFIG.NETWORK.NAME} network
+                      {/* Connect to the {CONFIG.NETWORK.NAME} network */}
+                      The Official Release Date for the Peaky Panthers will be announced shortly! Stay tuned!!!
                     </s.TextDescription>
                     <s.SpacerSmall />
-                    <StyledButton
+                    {/* <StyledButton
                       onClick={(e) => {
                         e.preventDefault();
                         dispatch(connect());
@@ -293,7 +295,7 @@ function App() {
                       }}
                     >
                       CONNECT
-                    </StyledButton>
+                    </StyledButton> */}
                     {blockchain.errorMsg !== "" ? (
                       <>
                         <s.SpacerSmall />
@@ -388,7 +390,8 @@ function App() {
           >
             Please make sure you are connected to the right network (
             {CONFIG.NETWORK.NAME} Mainnet) and the correct address. Please note:
-            Once you make the purchase, you cannot undo this action. Welcome to the Peaky Panthers community.
+            Once you make the purchase, you cannot undo this action.
+            Welcome to the Peaky Panthers community!
           </s.TextDescription>
           <s.SpacerSmall />
           <s.TextDescription
@@ -397,10 +400,11 @@ function App() {
               color: "var(--primary-text)",
             }}
           >
-            We have set the gas limit to {CONFIG.GAS_LIMIT} for the contract to
+            {/* We have set the gas limit to {CONFIG.GAS_LIMIT} for the contract to
             successfully mint your NFT. We recommend that you don't lower the
-            gas limit.
+            gas limit. */}
           </s.TextDescription>
+          <Roadmap />
         </s.Container>
       </s.Container>
     </s.Screen>

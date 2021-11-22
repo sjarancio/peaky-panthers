@@ -1,4 +1,4 @@
-// import "./App.css";
+import "./App.css";
 import { ReactComponent as WorkIcon } from "./work.svg";
 import { ReactComponent as SchoolIcon } from "./school.svg";
 
@@ -22,7 +22,8 @@ function Roadmap() {
   const bodySize = {fontSize: 30,
     color: "#dd3db5",
     textAlign: "center",
-    paddingTop: "100px",}
+    paddingTop: "100px",
+  }
 
   return (
     
@@ -47,7 +48,7 @@ function Roadmap() {
               iconStyle={isWorkIcon ? workIconStyles : schoolIconStyles}
               icon={isWorkIcon ? <WorkIcon /> : <SchoolIcon />}
             >
-              <h3 className="vertical-timeline-element-title">
+              <h3 className="vertical-timeline-element-title" style={{color: "#dd3db5"}}>
                 {element.title}
               </h3>
               <h5 className="vertical-timeline-element-subtitle">
@@ -68,11 +69,6 @@ function Roadmap() {
           );
         })}
       </VerticalTimeline>
-        <br></br><br></br><br></br><br></br>
-        <hr style={styleObj}/>
-        <h1 style={titleSize} >About </h1>
-        <h6 style={bodySize}>The Peaky Panthers a collection of 8,888 unique and hand crafted NFT's living on the Avalanche C-Chain. The Panthers team and community strives to be leaders in the NFT space on Avalanche. Peaky Panther's hodlers will have access to insane value through the community including things such as cash giveaways, games, competitions, and events. Get involved today and cement yourself as an OG in the Peaky Panthers community! </h6>
-        <br></br><br></br><br></br><br></br>
     </div>
   );
 }
